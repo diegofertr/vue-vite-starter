@@ -3,6 +3,7 @@ import Home from '/src/components/Home.vue'
 import Factura from '/src/components/Factura.vue'
 import Pago from '/src/components/Pago.vue'
 import Parametro from '/src/components/Parametro.vue'
+import Carrito from '/src/components/Carrito.vue'
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: '/pago',
     name: 'Pago',
     component: Pago
+  },
+  {
+    path: '/carrito',
+    name: 'Carrito',
+    component: Carrito
   }
 ]
 
