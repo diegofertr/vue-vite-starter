@@ -1,0 +1,39 @@
+{
+  "descripcion": "Pago de tramites de la agitec - CLIENTE 1",
+  "datosSesion": null,
+  "metaDatosTransaccion": "Informacion extra...",
+  "codigoOrden": "AR-1D-AA-11-9Z",
+  "datosPago": {
+    "nombresCliente": "Alan",
+    "apellidosCliente": "Brito",
+    "numeroDocumentoCliente": "6058904",
+    "fechaNacimientoCliente": "1996-09-19",
+    "cuentaBancaria": "111000034567",
+    "montoTotal": 20
+  },
+  "productos": [
+    {
+      "codigo": "1AB222",
+      "descripcion": "Chamarra de cuero agitec",
+      "codigoSin": "20201",
+      "precioUnitario": 10,
+      "cantidad": 1,
+      "subTotal": 10,
+      "unidadMedida": 58
+    },
+		{
+      "codigo": "1BB222",
+      "descripcion": "Gorro de lana Agitec",
+      "codigoSin": "30201",
+      "precioUnitario": 10,
+      "cantidad": 1,
+      "subTotal": 10,
+      "unidadMedida": 58
+    }
+  ],
+  "facturacion": {
+    "razonSocialCliente": "TICONA",
+    "nitCliente": "7058903",
+    "emailCliente": "yeyo@mail.com"
+  }
+}
