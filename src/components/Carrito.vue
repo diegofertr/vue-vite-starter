@@ -59,25 +59,54 @@
     </div>
 
     <div id="summary" class="w-2/6 px-8 py-10 bg-gray-100 rounded-md">
-      <h1 class="font-semibold text-2xl border-b pb-8">Detalle de compra</h1>
-      <div class="flex justify-between mt-5 mb-5 text-gray-500">
-        <span class="font-medium text-sm">Subtotal</span>
-        <span class="font-medium text-sm">Bs. {{ costoTotal }}</span>
-      </div>
-      <!-- <div>
-        <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
-        <select class="block p-2 text-gray-600 w-full text-sm">
-          <option>Standard shipping - $10.00</option>
-        </select>
-      </div> -->
-      <div class="border-t mt-5">
-        <div class="flex font-semibold justify-between py-6 text-sm">
-          <span>Costo total</span>
-          <span>Bs. {{ costoTotal }}</span>
+      <div class="border-b border-gray-300 py-5">
+        <h1 class="font-semibold text-2xl border-b pb-8">Datos de facturación</h1>
+        <div class="my-2">
+          <label class="font-medium uppercase mb-2" for="razonSocial">Razon social</label>
+          <input
+            class="w-full p-2 my-2 rounded-md focus:ring-1 focus:ring-primary focus:outline-none"
+            type="text"
+            name="razonSocial"
+            id="razonSocial"
+            v-model="datosFacturacion.razonSocialCliente"
+          >
         </div>
-        <button class="bg-primary font-semibold hover:bg-opacity-70 py-3 text-sm text-white uppercase w-full border-0 rounded-md focus:outline-none focus:ring-4 focus:ring-primary">
-          PAGAR
-        </button>
+        <div class="my-2">
+          <label class="font-medium uppercase mb-2" for="nit">Nit</label>
+          <input
+            class="w-full p-2 my-2 rounded-md focus:ring-1 focus:ring-primary focus:outline-none"
+            type="text"
+            name="nit"
+            id="nit"
+            v-model="datosFacturacion.nitCliente"
+          >
+        </div>
+        <div class="my-2">
+          <label class="font-medium uppercase mb-2" for="correo">Correo electrónico</label>
+          <input
+            class="w-full p-2 my-2 rounded-md focus:ring-1 focus:ring-primary focus:outline-none"
+            type="text"
+            name="correo"
+            id="correo"
+            v-model="datosFacturacion.emailCliente"
+          >
+        </div>
+      </div>
+      <div class="my-5">
+        <h1 class="font-semibold text-2xl border-b pb-8">Detalle de compra</h1>
+        <div class="flex justify-between mt-5 mb-5 text-gray-500">
+          <span class="font-medium text-sm">Subtotal</span>
+          <span class="font-medium text-sm">Bs. {{ costoTotal }}</span>
+        </div>
+        <div class="border-t mt-5">
+          <div class="flex font-bold justify-between py-6 text-lg">
+            <span>Costo total</span>
+            <span>Bs. {{ costoTotal }}</span>
+          </div>
+          <button class="bg-primary font-semibold hover:bg-opacity-70 py-3 text-sm text-white uppercase w-full border-0 rounded-md focus:outline-none focus:ring-4 focus:ring-primary">
+            PAGAR
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -96,6 +125,11 @@ export default {
     const store = inject('store')
     const productos = ref([])
     const costoTotal = ref(0)
+    const datosFacturacion = ref({
+      razonSocialCliente: 'BRITO',
+      nitCliente: '777666555',
+      emailCliente: 'alanbrito@mail.com'
+    })
 
     onMounted(async () => {
       console.log('carrito mounted!')
@@ -163,6 +197,7 @@ export default {
       imgTramite,
       store,
       productos,
+      datosFacturacion,
       // Functions
       aumentarCantidadProducto,
       descontarCantidadProducto,
